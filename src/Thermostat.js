@@ -4,7 +4,7 @@ class Thermostat {
 
   constructor(temp = 20) {
     this._temp = temp;
-    this.powerSavingOn = false
+    this.powerSavingOn = true;
   }
 
   increase() {
@@ -33,6 +33,20 @@ class Thermostat {
 
   powerSavingSwitch() {
     this.powerSavingOn ? this.powerSavingOn = false : this.powerSavingOn = true
+  }
+
+  reset() {
+    this._temp = 20;
+  }
+
+  energyUsage() {
+    if (this._temp <  18) {
+      return 'low-usage';
+    } else if ( this._temp <= 25 && this._temp > 18) {
+      return 'medium-usage';
+    } else {
+      return 'high-usage';
+    }
   }
 
 }
