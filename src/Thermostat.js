@@ -3,30 +3,30 @@
 class Thermostat {
 
   constructor(temp = 20) {
-    this._temp = temp;
+    this.temp = temp;
     this.powerSavingOn = true;
   }
 
   increase() {
     this._checkMaxTemp()
 
-    this._temp++
+    this.temp++
   }
 
   decrease() {
     this._checkMinTemp()
 
-    this._temp--
+    this.temp--
   }
 
   _checkMinTemp() {
-    if (this._temp === 10) {
+    if (this.temp === 10) {
       throw "Min temp reached"
     }
   }
 
   _checkMaxTemp() {
-    if((this.powerSavingOn && this._temp===25) || (!this.powerSavingOn && this._temp===32)) {
+    if((this.powerSavingOn && this.temp===25) || (!this.powerSavingOn && this.temp===32)) {
       throw "Max temperature reached"
     }
   }
@@ -36,13 +36,13 @@ class Thermostat {
   }
 
   reset() {
-    this._temp = 20;
+    this.temp = 20;
   }
 
   energyUsage() {
-    if (this._temp <  18) {
+    if (this.temp <=  18) {
       return 'low-usage';
-    } else if ( this._temp <= 25 && this._temp > 18) {
+    } else if ( this.temp <= 25 && this.temp > 18) {
       return 'medium-usage';
     } else {
       return 'high-usage';

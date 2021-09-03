@@ -1,21 +1,24 @@
 <html>
     <head>
         <script src="../src/Thermostat.js"></script>
+        <script src="../src/interface.js"></script>
+        <link rel="stylesheet" type="text/css" href="../public/style.css" />
     </head>
 
     <body>
     <h1>Thermostat</h1>
 
     <div>
-        <h2>Display temp somewhere here ???</h2>
+        <h2 id="display_temp"></h2>
         <button id="increase" class="thermostat_button">Up</button>
         <button id="decrease" class="thermostat_button">Down</button>
         <button id="reset" class="thermostat_button">Reset temp</button>
     </div>
 
-    <div>
-        <button id="powersaving" class="thermostat_button">Powersaving Mode (On/Off)</button>
-        <button id="usage" class="thermostat_button">Energy usage</button>
+    <div>Powersaving mode: 
+        <h2 id="display_powersaving_mode"></h2>
+        <button id="powersaving" class="thermostat_button">On/Off</button>
+        <!-- <button id="usage" class="thermostat_button">Energy usage</button> -->
     </div>
 
     </body>
